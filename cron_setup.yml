@@ -8,8 +8,7 @@
       #repository_path: /var/www/html
       #key_file: /root/.ssh/id_rsa.github
       #project_name: viki-devops-test
-      playbook_dir: "{{ playbook_dir }}" # Defined by Ansible itself
-      files_dir: "{{ playbook_dir }}/files/"
+      files_dir: /home/vpandey/test_playbooks/files/
   tasks:
     - name: Check if a file exist
       stat:
