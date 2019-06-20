@@ -1,0 +1,14 @@
+---
+- name: Viki test playbook
+  hosts: localhost
+  vars:
+      playbook_dir: "{{ playbook_dir }}" # Defined by Ansible itself
+      files_dir: "{{ playbook_dir }}/files/"
+  tasks:
+    - name: Check cmd output
+      command: ls "{{ playbook_dir }}"
+      register: cmd_out
+
+    - debug:
+        msg: "cmd_out is {{ cmd_out.stdout }}"
+      when: '"2vikiway_deploy-master.yml" in cmd_out.stdout'
